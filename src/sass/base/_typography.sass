@@ -1,9 +1,62 @@
+@use '../abstracts' as abst
+
 /* * Basic Typography Styles */
 html
-    font-family: serif
-    font-size: 62.5%
-    font-weight: 400
+    font-size: 10px
 
-body
-    font-size: 1.6rem
+body,
+input,
+::placeholder,
+button
+    font-family: abst.$fnt-pri
+    font-size: abst.$fnt-rg
 
+h1,
+p
+    color: abst.$clr-pri
+
+.intro
+    font-size: clamp(abst.$fnt-lg, 3vw, abst.$fnt-xl)
+    font-weight: abst.$weight-bld
+
+.intro-text
+    line-height: 2.5rem
+
+input .error,
+.fa-circle-exclamation,
+small
+    color: abst.$clr-em
+
+input,
+::placeholder
+    font-weight: abst.$weight-sem-bld
+    color: abst.$clr-blue-dark
+
+::placeholder
+    opacity: 0.6
+
+.form__content 
+
+    small
+        font-size: 1rem
+        font-style: italic
+
+button
+    color: abst.$clr-white
+    text-transform: uppercase
+
+.term-text
+    font-size: 1rem
+    color: abst.$clr-blue-gray
+
+    a
+        text-decoration: none
+        color: abst.$clr-em
+        font-weight: abst.$weight-sem-bld
+
+        &:hover,
+        &:focus
+            color: abst.$clr-sec
+
+        &:hover
+            text-decoration: initial

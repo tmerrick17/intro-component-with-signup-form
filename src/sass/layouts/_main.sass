@@ -1,0 +1,161 @@
+@use '../abstracts' as abst
+
+main 
+    display: flex
+    flex-direction: column
+    justify-content: center
+    width: 77vw
+
+    @media screen and (min-width: abst.$media-sm)
+        width: 50vw
+
+    @media screen and (min-width: abst.$media-md)
+        flex-direction: row
+        margin-top: clamp(8.5vw, 12vw, 30vw)
+        width: 77vw
+
+    .intro-group
+        @media screen and (min-width: abst.$media-md)
+            margin-top: 8rem
+            margin-left: 4rem
+        
+        @media screen and (min-width: 1920px)
+            margin-left: 26rem
+
+        .intro,
+        .intro__text
+            text-align: center
+
+            @media screen and (min-width: abst.$media-md)
+                text-align: left
+
+        .intro
+            margin: abst.$spc-lg 0 abst.$spc-sm
+
+            @media screen and (min-width: abst.$media-md)
+                width: 16ch
+
+            &__text
+                margin-bottom: abst.$spc-md
+
+                @media screen and (min-width: abst.$media-md)
+                    width: 52ch
+
+    .form-group
+        max-width: 50rem
+        margin: 0 auto
+
+        @media screen and (min-width: abst.$media-md)
+            justify-self: end
+            width: 91rem
+
+        .trial,
+        .form
+            box-shadow: 0px 0.8rem 0px 0px hsl(0, 0%, 0%, 0.2)
+
+        .trial
+            display: flex
+            flex-direction: column
+            justify-content: center
+            align-items: center
+            border-radius: 1rem
+            background-color: abst.$clr-sec
+            margin-bottom: 2.4rem
+
+            &__text
+                padding-block: 2rem
+                text-align: center
+                min-width: 56%
+                max-width: 80%
+
+            &__em
+                font-weight: abst.$weight-bld
+
+        .form
+            display: flex
+            flex-direction: column
+            border-radius: 1rem
+            background: abst.$clr-pri
+            padding: abst.$spc-sm
+
+            @media screen and (min-width: abst.$media-sm)
+                padding: 3rem
+
+            @media screen and (min-width: abst.$media-md)
+                padding: 4rem
+
+            input:focus,
+            button
+                outline: none
+                border: none
+
+            .form__content
+                display: flex
+                flex-direction: column
+                position: relative
+
+                &.error input // INPUT BORDER ERROR
+                    border: 2px solid abst.$clr-em 
+                
+                &.success input // INPUT SUCCESS
+                    border: 2px solid abst.$clr-ter
+
+                &.error .fa-circle-exclamation // EXCLAMATION ERROR
+                    color: abst.$clr-em
+                    visibility: visible 
+
+                &.error small // MESSAGE ERROR
+                    color: abst.$clr-em
+                    display: block
+                
+                #first-name
+                    margin-top: 0
+
+                input
+                    display: block
+                    margin-top: 1.6rem
+                    border: 1px solid abst.$clr-blue-gray
+                    border-radius: 0.5rem
+                    padding: 1.5rem
+                    width: 100%
+                    background: abst.$clr-white
+
+                    @media screen and (min-width: abst.$media-md)
+                        padding-inline: 3rem
+
+                    &:focus
+                        border: 1px solid abst.$clr-sec
+
+                .fa-circle-exclamation
+                    visibility: hidden // VISIBILITY TOGGLE
+                    position: absolute
+                    top: 3.6rem
+                    right: 2rem
+
+                #first-name-error
+                    position: absolute
+                    top: 2rem
+
+                small
+                    display: none // DISPLAY TOGGLE
+                    padding-top: .4rem
+                    padding-right: .2rem
+                    align-self: end
+
+            button
+                margin-top: 2rem
+                border-radius: 0.5rem
+                background: abst.$clr-ter
+                padding-block: 1.6rem
+                cursor: pointer
+                box-shadow: 0px 0.4rem 0px 0px hsl(144, 38%, 54%)
+                margin-bottom: 1rem
+
+                @media screen and (min-width: abst.$media-md)
+                    margin-bottom: 1.6rem
+
+            .term-text
+                padding-inline: 3rem
+                width: 100%
+                text-align: center
+                line-height: 2rem
